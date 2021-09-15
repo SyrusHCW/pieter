@@ -1,0 +1,23 @@
+---
+- hosts: '{{ host }}'
+  connection: local
+  tasks:
+    - name: Create a VPC across two Avalibity Zones with Public, Front End and Back End Private subnets 
+      cloudformation:
+        aws_access_key: '{{ aws_access_key }}'
+        aws_secret_key: '{{ aws_secret_key }}'
+        stack_name: '{{ stack_name }}'
+        state: "present"
+        region: '{{ region }}'
+        disable_rollback: true
+        template: "CF-3SN-2AZ-VPC.yml"
+        template_parameters:
+          EnvironmentName: '{{ EnvironmentName }}'
+          VpcCIDR: '{{ VpcCIDR }}'
+          PublicSubnet1CIDR: '{{ PublicSubnet1CIDR }}'
+          PublicSubnet2CIDR: '{{ PublicSubnet2CIDR }}'
+          PrivateSubnetFE1CIDR: '{{ PrivateSubnetFE1CIDR }}'
+          PrivateSubnetFE2CIDR: '{{ PrivateSubnetFE2CIDR }}'
+          PrivateSubnetBE1CIDR: '{{ PrivateSubnetBE1CIDR }}'
+          PrivateSubnetBE2CIDR: '{{ PrivateSubnetBE2CIDR }}'
+          BgpASN: '{{ BgpASN }}'
