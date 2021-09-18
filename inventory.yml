@@ -1,5 +1,5 @@
 aws:
-  hosts:
+  host:
     USE1-SB-LAB:
       stack_name: 'USE1-SB-LAB-STACK'
       region: 'us-east-1'
