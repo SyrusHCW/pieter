@@ -1,0 +1,14 @@
+aws:
+  hosts:
+    USE1-SB-LAB:
+      stack_name: 'USE1-SB-LAB-STACK'
+      region: 'us-east-1'
+      EnvironmentName: 'USE1-SB-LAB'
+      VpcCIDR: 10.1.0.0/24
+      PublicSubnet1CIDR: 10.1.0.0/27
+      PublicSubnet2CIDR: 10.1.0.32/27
+      PrivateSubnetFE1CIDR: 10.1.0.64/27
+      PrivateSubnetFE2CIDR: 10.1.0.96/27
+      PrivateSubnetBE1CIDR: 10.1.0.128/27
+      PrivateSubnetBE2CIDR: 10.1.0.160/27
+      BgpASN: 65302
