@@ -1,5 +1,5 @@
 ---
-- hosts: '{{ host }}'
+- hosts: "USE-SB-LAB"
   connection: local
   tasks:
     - name: Create a VPC across two Avalibity Zones with Public, Front End and Back End Private subnets 
